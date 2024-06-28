@@ -4,9 +4,10 @@ import Lottie from "lottie-react";
 
 const App = () => {
   return (
-    <div className="relative h-screen">
-      <Lottie animationData={animationData} />
-      <ul className="absolute left-50% right-50%  flex justify-center space-x-4">
+
+    <div className="relative w-screen h-screen overflow-hidden">
+      <Lottie animationData={animationData}/>
+      <ul className="absolute inset-0 flex items-center justify-center">
         <li>Home</li>
         <li>About</li>
         <li>Projects</li>
