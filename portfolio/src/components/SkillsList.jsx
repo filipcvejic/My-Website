@@ -28,8 +28,9 @@ function SkillsList() {
 
   return (
     <div className="flex justify-center w-full">
-      <div className="hidden lg:block w-full">
-        <div className="flex flex-col justify-center items-center w-full group px-36 gap-24">
+      {/* Prvi kontejner za velike ekrane */}
+      <div className="lg:w-full lg:block hidden md:hidden sm:hidden">
+        <div className="flex flex-col justify-center items-center w-full group px-36 gap-12">
           <div className="flex flex-row w-full justify-between">
             {skills.slice(0, 6).map((skill, index) => (
               <img
@@ -50,8 +51,10 @@ function SkillsList() {
           </div>
         </div>
       </div>
-      <div className="hidden md:block w-full">
-        <div className="flex flex-col justify-center items-center w-full group px-36 gap-12">
+
+      {/* Drugi kontejner za manje ekrane */}
+      <div className="w-full lg:hidden xl:hidden 2xl:hidden">
+        <div className="flex flex-col justify-center items-center w-full group md:px-32 sm:px-20 px-12 gap-12">
           <div className="flex flex-row w-full justify-between">
             {skills.slice(0, 4).map((skill, index) => (
               <img
@@ -66,7 +69,7 @@ function SkillsList() {
               <img
                 key={index}
                 src={skill}
-                className="transition-transform duration-300 transform group-hover:scale-125 group-hover:translate-x-4 group-hover:translate-y-4"
+                className="transition-transform  duration-300 transform group-hover:scale-125 group-hover:translate-x-4 group-hover:translate-y-4"
               />
             ))}
           </div>
@@ -81,7 +84,8 @@ function SkillsList() {
           </div>
         </div>
       </div>
-      <div className="hidden sm:block w-full">
+
+      {/* <div className="sm:w-full sm:block hidden lg:hidden md:hidden">
         <div className="flex flex-col justify-center items-center w-full group px-24 gap-12">
           <div className="flex flex-row justify-around w-full px-10">
             {skills.slice(0, 2).map((skill, index) => (
@@ -120,7 +124,7 @@ function SkillsList() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
