@@ -16,3 +16,12 @@
   @apply bg-cover bg-center;
   background-image: url("/assets/about-background2.jpg");
 }
+
+.skills-bg {
+  @apply bg-cover bg-center;
+}
+
+.footer-bg {
+  @apply bg-cover bg-center;
+  background-image: url("/assets/footer-background.png");
+}
