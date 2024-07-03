@@ -22,6 +22,9 @@ export default {
       content: {
         underline: "url('/icons/underline.svg')",
       },
+      fontFamily: {
+        poppins: ["Poppins"],
+      },
     },
   },
   plugins: [],
