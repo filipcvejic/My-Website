@@ -8,13 +8,13 @@
 }
 
 .about-bg1 {
-  @apply bg-cover bg-center;
-  background-image: url("/assets/about-background1.jpg");
+  @apply bg-cover;
+  background-image: url("/assets/about-background1.png");
 }
 
 .about-bg2 {
-  @apply bg-cover bg-center;
-  background-image: url("/assets/about-background2.jpg");
+  @apply bg-cover;
+  background-image: url("/assets/about-background2.png");
 }
 
 .skills-bg {
