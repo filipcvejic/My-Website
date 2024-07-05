@@ -8,12 +8,12 @@
 }
 
 .about-bg1 {
-  @apply bg-cover;
+  @apply bg-cover bg-center;
   background-image: url("/assets/about-background1.png");
 }
 
 .about-bg2 {
-  @apply bg-cover;
+  @apply bg-cover bg-center;
   background-image: url("/assets/about-background2.png");
 }
 
@@ -21,7 +21,17 @@
   @apply bg-cover bg-center;
 }
 
+.project-bg {
+  @apply relative bg-cover bg-left;
+  background-image: url("/assets/project-background.png");
+}
+
 .footer-bg {
   @apply bg-cover bg-center;
   background-image: url("/assets/footer-background.png");
+}
+
+.overview-project-button:hover .stars-icon-path {
+  transition: 0.3s;
+  fill: #fff !important;
 }
