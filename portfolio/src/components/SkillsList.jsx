@@ -30,10 +30,10 @@ function SkillsList() {
 
   return (
     <div className="relative w-full">
-      <Lottie animationData={animationData} />
+      {/* <Lottie animationData={animationData} /> */}
       <div className="flex justify-center w-full">
         <div className="lg:w-full lg:block hidden md:hidden sm:hidden">
-          <div className="absolute inset-0 flex flex-col justify-center items-center w-full group px-36 gap-12">
+          <div className="flex flex-col justify-center items-center w-full group px-36 gap-12">
             <div className="flex flex-row w-full justify-between">
               {skills.slice(0, 6).map((skill, index) => (
                 <img
@@ -57,7 +57,7 @@ function SkillsList() {
 
         {/* Drugi kontejner za manje ekrane */}
         <div className="w-full lg:hidden xl:hidden 2xl:hidden">
-          <div className="absolute inset-0 flex flex-col justify-center items-center w-full group md:px-32 sm:px-20 px-5 gap-12">
+          <div className="flex flex-col justify-center items-center w-full group md:px-32 sm:px-20 px-5 gap-12">
             <div className="flex flex-row w-full justify-between">
               {skills.slice(0, 4).map((skill, index) => (
                 <img
