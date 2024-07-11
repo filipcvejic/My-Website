@@ -17,13 +17,23 @@
   background-image: url("/assets/about-background2.png");
 }
 
+.contact-bg {
+  @apply bg-cover bg-top;
+  background-image: url("/assets/about-background1.png");
+}
+
 .skills-bg {
   @apply bg-cover bg-center;
 }
 
-.project-bg {
+.project-bg1 {
   @apply relative bg-cover bg-left;
-  background-image: url("/assets/project-background.png");
+  background-image: url("/assets/project-background1.png");
+}
+
+.project-bg2 {
+  @apply relative bg-cover bg-right;
+  background-image: url("/assets/project-background2.png");
 }
 
 .footer-bg {
