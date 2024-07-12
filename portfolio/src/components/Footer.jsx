@@ -6,7 +6,7 @@ import TwitterIcon from "../icons/TwitterIcon";
 
 function Footer() {
   return (
-    <div className="footer-bg w-full flex flex-col gap-6 justify-center items-center py-16">
+    <div className="footer-bg w-full flex flex-col gap-6 justify-center items-center py-16 h-[24vh]">
       <div className="flex flex-row gap-5">
         <MailIcon />
         <LinkedInIcon />
