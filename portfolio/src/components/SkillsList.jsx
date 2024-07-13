@@ -1,15 +1,16 @@
 import React from "react";
-import html from "/icons/html.svg";
-import mongo from "/icons/mongo.svg";
-import git from "/icons/git.svg";
-import tailwind from "/icons/tailwind.svg";
-import bootstrap from "/icons/bootstrap.svg";
-import express from "/icons/express.svg";
-import ts from "/icons/ts.svg";
-import js from "/icons/js.svg";
-import css from "/icons/css.svg";
-import node from "/icons/node.svg";
-import react from "/icons/react.svg";
+import html from "/assets/icons/html.svg";
+import mongo from "/assets/icons/mongo.svg";
+import git from "/assets/icons/git.svg";
+import tailwind from "/assets/icons/tailwind.svg";
+import js from "/assets/icons/js.svg";
+import bootstrap from "/assets/icons/bootstrap.svg";
+import express from "/assets/icons/express.svg";
+import ts from "/assets/icons/ts.svg";
+import next from "/assets/icons/next.svg";
+import css from "/assets/icons/css.svg";
+import node from "/assets/icons/node.svg";
+import react from "/assets/icons/react.svg";
 import Lottie from "lottie-react";
 import animationData from "../animations/skills-bubbles-animation.json";
 
@@ -19,10 +20,10 @@ function SkillsList() {
     mongo,
     git,
     tailwind,
-    bootstrap,
+    js,
     express,
     ts,
-    js,
+    next,
     css,
     node,
     react,
