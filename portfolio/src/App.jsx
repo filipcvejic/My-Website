@@ -1,4 +1,5 @@
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 import SkillsList from "./components/SkillsList";
 import "./index.css";
 import AboutSection from "./sections/AboutSection";
@@ -8,11 +9,12 @@ import ProjectsSection from "./sections/ProjectsSection";
 
 const App = () => {
   return (
-    <>
+    <div className="relative overflow-x-hidden">
+      <Header />
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
-    </>
+    </div>
 
     // <div className="relative w-screen h-screen  bg-blue-500 overflow-hidden">
     //   <Lottie animationData={animationData} />

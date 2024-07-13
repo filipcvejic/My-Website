@@ -13,6 +13,7 @@ export default {
         "electric-violet-20": "rgba(109, 54, 241, 0.2)",
         "electric-violet": "#6D36F1",
         "blue-bell-20": "rgba(153, 142, 195, 0.2)",
+        "cornflower-blue": "#895EF1",
       },
       fontSize: {
         sm: "0.8rem",
@@ -24,7 +25,7 @@ export default {
         "5xl": "3.052rem",
       },
       content: {
-        underline: "url('/icons/underline.svg')",
+        underline: "url('/assets/icons/underline.svg')",
       },
       fontFamily: {
         poppins: ["Poppins"],
