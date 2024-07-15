@@ -14,6 +14,8 @@ export default {
         "electric-violet": "#6D36F1",
         "blue-bell-20": "rgba(153, 142, 195, 0.2)",
         "cornflower-blue": "#895EF1",
+        header: "rgba(255, 255, 255, 1)",
+        "columbia-blue": "#94D3FD",
       },
       fontSize: {
         sm: "0.8rem",
@@ -29,6 +31,11 @@ export default {
       },
       fontFamily: {
         poppins: ["Poppins"],
+      },
+      screens: {
+        default: "0px",
+        xsm: "480px",
+        "md-lg": "900px",
       },
     },
   },

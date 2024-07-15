@@ -48,11 +48,17 @@ function ProjectsSection() {
                 } flex flex-col ${evenIndex ? "items-end" : "items-start"}`}
               >
                 <span className="text-7xl">{project.title}</span>
-                <p className="text-end text-2xl">{project.description}</p>
+                <p
+                  className={`${
+                    evenIndex ? "text-end" : "text-start"
+                  } text-2xl`}
+                >
+                  {project.description}
+                </p>
                 <div className="fancy">
-                  <button className="overview-project-button flex items-center gap-2 border-majorelle-blue border-2 px-8 py-3 rounded-full text-majorelle-blue font-medium text-lg hover:bg-majorelle-blue hover:text-white">
-                    <ButtonStarsIcon className="mt-5" />
-                    View My Work
+                  <button className="overview-project-button flex items-center gap-2 border-majorelle-blue border-2 px-8 py-3 rounded-full text-majorelle-blue font-medium text-lg hover:bg-majorelle-blue hover:text-white hover:transition-all hover:duration-1000">
+                    <ButtonStarsIcon className="mt-5 z-40" />
+                    <p className="z-40 text-white">View My Work</p>
                   </button>
                 </div>
               </div>
