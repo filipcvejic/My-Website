@@ -7,7 +7,7 @@ import ContactTitle from "./ContactTitle";
 
 function Footer() {
   return (
-    <div className="footer-bg w-full flex md:flex-col gap-6 md:justify-center default:justify-between md:items-center items-end py-2 px-3 md:py-16 md:px-0 md:h-[20vh] default:h-full">
+    <div className="footer-bg w-full flex md:flex-col gap-6 md:justify-center default:justify-between md:items-center items-end py-2 px-3 md:py-16 md:px-0 md:h-[20vh]">
       <div className="md:hidden">
         <ContactTitle color={"white"} />
       </div>
