@@ -4,6 +4,7 @@
 
 :root {
   --columbia-blue: theme("colors.columbia-blue");
+  --majorelle-blue: theme("colors.majorelle-blue");
 }
 
 .hero-bg {
@@ -45,58 +46,165 @@
   background-image: url("/assets/footer-background.png");
 }
 
-.overview-project-button:hover .stars-icon-path {
-  transition: 0.3s;
-  fill: #fff !important;
-}
-
-.fancy:hover {
-  --offset: 3px;
-  background: #6836f4;
-  border-radius: 50px;
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.fancy:hover::before {
-  content: "";
-  background: conic-gradient(transparent 270deg, white, transparent);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  aspect-ratio: 1;
-  width: 100%;
-  animation: rotate 3s linear infinite;
-}
-
-.fancy:hover::after {
-  content: "";
-  background: inherit;
-  border-radius: inherit;
-  position: absolute;
-  inset: var(--offset);
-  height: calc(100% - 2 * var(--offset));
-  width: calc(100% - 2 * var(--offset));
-}
-
-@keyframes rotate {
-  from {
-    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
-  }
-
-  to {
-    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
-  }
-}
-
-.width-transition {
-  @apply transition-all duration-300 ease-in-out;
-  transition-property: width;
+.contact-form {
+  border-image: linear-gradient(0turn, white, var(--majorelle-blue), white) 1;
+  animation: changeGradient 3s infinite;
 }
 
 .footer-icon:hover :nth-child(2) {
   fill: var(--columbia-blue);
   transition: 0.5s;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-border {
+  border: 2px solid var(--majorelle-blue);
+  width: 60px;
+  height: 60px;
+}
+
+.circle-full {
+  background-color: var(--majorelle-blue);
+  width: 10px;
+  opacity: 0.7;
+  border: 1px solid rgba(255, 255, 255, 0.808);
+}
+
+@keyframes changeGradient {
+  0%,
+  100% {
+    border-image: linear-gradient(0turn, white, var(--majorelle-blue), white) 1;
+  }
+  5% {
+    border-image: linear-gradient(
+        0.025turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  10% {
+    border-image: linear-gradient(0.05turn, white, var(--majorelle-blue), white)
+      1;
+  }
+  15% {
+    border-image: linear-gradient(
+        0.075turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  20% {
+    border-image: linear-gradient(0.1turn, white, var(--majorelle-blue), white)
+      1;
+  }
+  25% {
+    border-image: linear-gradient(
+        0.125turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  30% {
+    border-image: linear-gradient(0.15turn, white, var(--majorelle-blue), white)
+      1;
+  }
+
+  35% {
+    border-image: linear-gradient(
+        0.175turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  40% {
+    border-image: linear-gradient(0.2turn, white, var(--majorelle-blue), white)
+      1;
+  }
+  45% {
+    border-image: linear-gradient(
+        0.225turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  50% {
+    border-image: linear-gradient(0.25turn, white, var(--majorelle-blue), white)
+      1;
+  }
+  55% {
+    border-image: linear-gradient(
+        0.275turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  60% {
+    border-image: linear-gradient(0.3turn, white, var(--majorelle-blue), white)
+      1;
+  }
+  65% {
+    border-image: linear-gradient(
+        0.325turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  70% {
+    border-image: linear-gradient(0.35turn, white, var(--majorelle-blue), white)
+      1;
+  }
+  75% {
+    border-image: linear-gradient(
+        0.375turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  80% {
+    border-image: linear-gradient(0.4turn, white, var(--majorelle-blue), white)
+      1;
+  }
+
+  85% {
+    border-image: linear-gradient(
+        0.425turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
+  90% {
+    border-image: linear-gradient(0.45turn, white, var(--majorelle-blue), white)
+      1;
+  }
+  95% {
+    border-image: linear-gradient(
+        0.475turn,
+        white,
+        var(--majorelle-blue),
+        white
+      )
+      1;
+  }
 }

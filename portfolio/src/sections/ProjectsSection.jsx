@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonStarsIcon from "../icons/ButtonStarsIcon";
-import Image from "/assets/Untitled.png";
+import Image from "/assets/Untitled3.png";
 import Heading from "../components/Heading";
 
 function ProjectsSection() {
@@ -9,22 +9,22 @@ function ProjectsSection() {
       title: "Technomedia",
       link: "https://technomediashop.netlify.app",
       description:
-        "with extensive knowledge of the MERN stack. With over a year and a half of experience working on diverse projects, I have honed my skills in both Front-End and Back-End Development.",
+        "Full stack social media application built with React, Node.js, Express.js, MongoDB, Socket.io and AWS S3.",
       image: Image,
     },
     {
       title: "Technomedia",
       link: "https://technomediashop.netlify.app",
       description:
-        "with extensive knowledge of the MERN stack. With over a year and a half of experience working on diverse projects, I have honed my skills in both Front-End and Back-End Development.",
+        "Full stack social media application built with React, Node.js, Express.js, MongoDB, Socket.io and AWS S3.",
       image: Image,
     },
   ];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center gap-10 h-screen">
       <Heading title={`Projects`} />
-      <div className="w-full">
+      <div className="w-full flex flex-col justify-around h-full">
         {projects?.map((project, index) => {
           const evenIndex = index % 2 === 0;
 
@@ -38,27 +38,50 @@ function ProjectsSection() {
               <div
                 className={`project-bg${
                   evenIndex ? "1" : "2"
-                } flex items-center justify-center w-1/2 py-40`}
+                } flex items-center justify-center w-1/2 2xl:py-40 default:py-16`}
               >
-                <img src={project.image} className="w-[60%] mr-10" />
+                <img
+                  src={project.image}
+                  className={`
+                    2xl:w-[60%] xl:w-[80%] default:w-full ${
+                      evenIndex ? "mr-10" : "ml-10"
+                    } rounded-xl`}
+                />
+                {/*  2xl:w-[60%]  */}
               </div>
               <div
                 className={`w-1/2 ${
-                  evenIndex ? "pl-36" : "pr-36"
-                } flex flex-col ${evenIndex ? "items-end" : "items-start"}`}
+                  evenIndex ? "xl:pl-36 sm:pl-9 default:pl-6" : "xl:pr-36"
+                } flex flex-col ${
+                  evenIndex ? "items-end" : "items-start"
+                } gap-1`}
               >
-                <span className="text-7xl">{project.title}</span>
+                <span className="xl:text-7xl lg:text-6xl md:text-5xl sm:text-3xl default:text-xl font-bold">
+                  {project.title}
+                </span>
                 <p
                   className={`${
                     evenIndex ? "text-end" : "text-start"
-                  } text-2xl`}
+                  } md:text-2xl sm:text-lg default:text-sm`}
                 >
                   {project.description}
                 </p>
+                {/* <button className="default:px-2 default:py-[6px] border-majorelle-blue border-[1px]  text-majorelle-blue rounded-lg text-sm">
+                  View My Work
+                </button>
+                <button className="default:px-2 default:py-[6px] border-majorelle-blue border-[1px]  text-majorelle-blue  rounded-lg text-sm">
+                  Learn More
+                </button> */}
                 <div className="fancy">
-                  <button className="overview-project-button flex items-center gap-2 border-majorelle-blue border-2 px-8 py-3 rounded-full text-majorelle-blue font-medium text-lg hover:bg-majorelle-blue hover:text-white hover:transition-all hover:duration-1000">
+                  <button className="overview-project-button flex items-center md:gap-2 default:gap-[6px] border-majorelle-blue border-[1px] md:px-8 default:px-2 md:py-3 default:py-2 rounded-full text-majorelle-blue font-medium md:text-lg default:text-xs hover:bg-majorelle-blue hover:text-white hover:transition-all hover:duration-1000">
                     <ButtonStarsIcon className="mt-5 z-40" />
-                    <p className="z-40 text-white">View My Work</p>
+                    <p className="z-40 text-majorelle-blue">View My Work</p>
+                  </button>
+                </div>
+                <div className="fancy">
+                  <button className="overview-project-button flex items-center md:gap-2 default:gap-[6px] border-majorelle-blue border-[1px] md:px-8 default:px-2 md:py-3 default:py-2 rounded-full text-majorelle-blue font-medium md:text-lg default:text-xs hover:bg-majorelle-blue hover:text-white hover:transition-all hover:duration-1000">
+                    <ButtonStarsIcon className="mt-5 z-40" />
+                    <p className="z-40 text-majorelle-blue">Learn more</p>
                   </button>
                 </div>
               </div>
