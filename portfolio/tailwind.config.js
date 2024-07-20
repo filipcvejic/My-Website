@@ -37,6 +37,9 @@ export default {
         xsm: "480px",
         "md-lg": "900px",
       },
+      boxShadow: {
+        "3xl": "0 4px 4px rgba(0,0,0,0.3)",
+      },
     },
   },
   plugins: [],

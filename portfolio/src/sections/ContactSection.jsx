@@ -12,7 +12,10 @@ function ContactSection() {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col contact-bg default:gap-3">
+    <div
+      className="h-screen flex flex-col contact-bg default:gap-3"
+      id="contact"
+    >
       <div className="flex flex-col items-center justify-between h-full default:gap-4">
         <Heading title={`Contact`} />
         <div className="flex justify-around w-full items-center h-full default:px-5">

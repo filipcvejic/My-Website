@@ -27,6 +27,7 @@ function AboutSection() {
     <div
       className={`${bgImage} transition-all duration-500 w-full flex flex-col items-center h-screen gap-8`}
       onWheel={scrollSectionHandler}
+      id="about"
     >
       <Heading title={"About"} />
       <div className="flex flex-col gap-5 h-full">
