@@ -29,11 +29,11 @@ function ProjectsSection() {
 
   return (
     <div
-      className="flex flex-col items-center gap-10 h-screen overflow-hidden"
+      className="section flex flex-col items-center gap-10 min-h-screen"
       id="projects"
     >
       <Heading title={`Projects`} />
-      <div className="w-full flex flex-col justify-around h-full gap-96 projects-container overflow-y-scroll">
+      <div className="w-full flex flex-col justify-around h-full gap-96 projects-container">
         {projects?.map((project, index) => {
           const evenIndex = index % 2 === 0;
 
@@ -41,8 +41,8 @@ function ProjectsSection() {
             <div
               key={index}
               className={`flex ${
-                evenIndex ? "flex-row-reverse" : ""
-              } gap-7 items-center single-project section`}
+                evenIndex ? "flex-row-reverse " : ""
+              }gap-7 items-center single-project`}
               id={`section${index + 1}`}
             >
               <div
@@ -88,12 +88,6 @@ function ProjectsSection() {
                     <p className="z-40 text-majorelle-blue">Learn more</p>
                   </button>
                 </div>
-              </div>
-              <div className="progress-bar-container">
-                <div
-                  className="progress-bar"
-                  id={`progress-bar${index + 1}`}
-                ></div>
               </div>
             </div>
           );
