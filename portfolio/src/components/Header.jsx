@@ -56,7 +56,7 @@ function Header() {
   }, [location.hash]);
 
   return (
-    <div className="bg-header fixed w-full flex default:px-4 md:px-20 py-2 items-center z-50 shadow-3xl">
+    <div className="bg-header fixed w-full flex default:px-4 md:px-20 py-2 items-center z-50 shadow-3xl backdrop-blur-md">
       <ul className="list-none flex sm:gap-20 default:justify-around default:text-xl sm:text-2xl font-semibold w-full lg:justify-end">
         {navigationLinks.map((link, index) => (
           <li key={index} className={`text-black`}>
