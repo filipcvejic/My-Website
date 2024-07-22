@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import html from "/assets/icons/html.svg";
 import mongo from "/assets/icons/mongo.svg";
 import git from "/assets/icons/git.svg";
 import tailwind from "/assets/icons/tailwind.svg";
 import js from "/assets/icons/js.svg";
-import bootstrap from "/assets/icons/bootstrap.svg";
 import express from "/assets/icons/express.svg";
 import ts from "/assets/icons/ts.svg";
 import next from "/assets/icons/next.svg";
 import css from "/assets/icons/css.svg";
 import node from "/assets/icons/node.svg";
 import react from "/assets/icons/react.svg";
-import Lottie from "lottie-react";
-import animationData from "../animations/skills-bubbles-animation.json";
+import { skillsAnimation } from "../../skills-animation";
 
 function SkillsList() {
   const skills = [
@@ -29,10 +27,14 @@ function SkillsList() {
     react,
   ];
 
+  useEffect(() => {
+    skillsAnimation();
+  });
+
   return (
-    <div className="relative w-full">
-      {/* <Lottie animationData={animationData} /> */}
-      <div className="flex justify-center w-full">
+    <div className="skills-list-wrapper relative w-full bg-transparent">
+      <div className="skills-list-background-animation" />
+      <div className="relative flex justify-center w-full">
         <div className="lg:w-full lg:block hidden md:hidden sm:hidden">
           <div className="flex flex-col justify-center items-center w-full group px-36 gap-12">
             <div className="flex flex-row w-full justify-between">
