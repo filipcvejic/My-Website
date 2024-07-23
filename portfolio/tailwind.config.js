@@ -7,6 +7,8 @@ export default {
         "hero-background": "url('/assets/hero-background.png')",
         "about-background": "url('/assets/about-background.png')",
         "custom-gradient": "rgba(112, 60, 238, 0)",
+        "gradient-text":
+          "linear-gradient(to right, #6836F4 0%, #A75BCE 34%, #9747FF 57%, #32D1D7 88%)",
       },
       colors: {
         "majorelle-blue": "#6836F4",
@@ -14,8 +16,10 @@ export default {
         "electric-violet": "#6D36F1",
         "blue-bell-20": "rgba(153, 142, 195, 0.2)",
         "cornflower-blue": "#895EF1",
-        header: "rgba(255, 255, 255, 1)",
+        header: "rgba(255, 255, 255, 0.64)",
         "columbia-blue": "#94D3FD",
+        "medium-purple": "#A347EB",
+        greenyelow: "#ADFF2F",
       },
       fontSize: {
         sm: "0.8rem",
@@ -40,7 +44,22 @@ export default {
       boxShadow: {
         "3xl": "0 4px 4px rgba(0,0,0,0.3)",
       },
+      textColor: {
+        gradient: "transparent",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          ".bg-clip-text": {
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+          },
+        },
+        ["responsive", "hover"]
+      );
+    },
+  ],
 };
