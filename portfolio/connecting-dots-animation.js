@@ -3,8 +3,8 @@
 export function initCanvasDots() {
   var canvas = document.querySelector("canvas"),
     ctx = canvas.getContext("2d"),
-    colorDot = "gray",
-    color = "gray";
+    colorDot = "#555555",
+    color = "#555555";
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   canvas.style.display = "block";

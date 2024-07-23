@@ -8,12 +8,12 @@ function ContactSection() {
   const contactLabels = ["Full Name", "Company", "Email", "Your Inquiry"];
 
   useEffect(() => {
-    startAnimation();
+    startAnimation("contact-form");
   }, []);
 
   return (
     <div
-      className="h-screen flex flex-col contact-bg default:gap-3"
+      className="section h-screen flex flex-col contact-bg default:gap-3"
       id="contact"
     >
       <div className="flex flex-col items-center justify-between h-full default:gap-4">
@@ -41,7 +41,7 @@ function ContactSection() {
                   </div>
                 );
               })}
-              <button className="bg-electric-violet text-white py-2 rounded-lg text-lg font-semibold mt-2 hover:bg-cornflower-blue z-20">
+              <button className="bg-electric-violet text-white py-2 rounded-lg text-lg font-semibold mt-2 hover:bg-cornflower-blue z-20 transition-all duration-300">
                 Send Message
               </button>
             </form>
