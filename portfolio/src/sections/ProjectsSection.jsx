@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import ButtonStarsIcon from "../icons/ButtonStarsIcon";
 import Image from "/assets/Untitled.png";
 import Heading from "../components/Heading";
-import { scrollAnimation } from "../../scroll-animation";
+import { Link } from "react-router-dom";
+// import { scrollAnimation } from "../../scroll-animation";
 
 function ProjectsSection() {
-  useEffect(() => {
-    const cleanup = scrollAnimation();
-    return () => cleanup();
-  }, []);
+  // useEffect(() => {
+  //   const cleanup = scrollAnimation();
+  //   return () => cleanup();
+  // }, []);
 
   const projects = [
     {
@@ -17,6 +18,7 @@ function ProjectsSection() {
       description:
         "Full stack social media application built with React, Node.js, Express.js, MongoDB, Socket.io and AWS S3.",
       image: Image,
+      repository: "https://github.com/filipcvejic/Technomedia",
     },
     {
       title: "Technomedia",
@@ -28,12 +30,9 @@ function ProjectsSection() {
   ];
 
   return (
-    <div
-      className="section flex flex-col items-center gap-10 min-h-screen"
-      id="projects"
-    >
+    <div className="section flex flex-col items-center gap-10" id="projects">
       <Heading title={`Projects`} />
-      <div className="w-full flex flex-col justify-around h-full gap-96 projects-container">
+      <div className="w-full flex flex-col h-full default:gap-20 justify-between">
         {projects?.map((project, index) => {
           const evenIndex = index % 2 === 0;
 
@@ -42,8 +41,7 @@ function ProjectsSection() {
               key={index}
               className={`flex ${
                 evenIndex ? "flex-row-reverse " : ""
-              }gap-7 items-center single-project`}
-              id={`section${index + 1}`}
+              }gap-7 items-center`}
             >
               <div
                 className={`project-bg${
@@ -65,7 +63,7 @@ function ProjectsSection() {
                   evenIndex ? "items-end" : "items-start"
                 } gap-1`}
               >
-                <span className="xl:text-7xl lg:text-6xl md:text-5xl sm:text-3xl default:text-xl font-bold">
+                <span className="bg-clip-text text-gradient bg-gradient-text xl:text-7xl lg:text-6xl md:text-5xl sm:text-3xl default:text-xl font-bold">
                   {project.title}
                 </span>
                 <p
@@ -76,18 +74,26 @@ function ProjectsSection() {
                   {project.description}
                 </p>
 
-                <div className="fancy">
-                  <button className="overview-project-button flex items-center md:gap-2 default:gap-[6px] border-majorelle-blue border-[1px] md:px-8 default:px-2 md:py-3 default:py-2 rounded-full text-majorelle-blue font-medium md:text-lg default:text-xs hover:bg-majorelle-blue hover:text-white hover:transition-all hover:duration-1000">
-                    <ButtonStarsIcon className="mt-5 z-40" />
-                    <p className="z-40 text-majorelle-blue">View My Work</p>
-                  </button>
-                </div>
-                <div className="fancy">
-                  <button className="overview-project-button flex items-center md:gap-2 default:gap-[6px] border-majorelle-blue border-[1px] md:px-8 default:px-2 md:py-3 default:py-2 rounded-full text-majorelle-blue font-medium md:text-lg default:text-xs hover:bg-majorelle-blue hover:text-white hover:transition-all hover:duration-1000">
-                    <ButtonStarsIcon className="mt-5 z-40" />
-                    <p className="z-40 text-majorelle-blue">Learn more</p>
-                  </button>
-                </div>
+                <Link
+                  to={project.link}
+                  target="_blank"
+                  className="project-button group relative overflow-hidden border-majorelle-blue hover:border-none flex items-center md:gap-2 default:gap-[6px] border-[1px] md:px-8 default:px-2 md:py-3 default:py-2 rounded-full text-majorelle-blue font-medium md:text-lg default:text-xs hover:my-[1px]"
+                >
+                  <ButtonStarsIcon className="mt-5 z-40" />
+                  <p className="z-40 text-majorelle-blue group-hover:text-white transition-all duration-300">
+                    View My Work
+                  </p>
+                </Link>
+                <Link
+                  to={project.repository}
+                  target="_blank"
+                  className="project-button group relative overflow-hidden border-majorelle-blue hover:border-none flex items-center md:gap-2 default:gap-[6px] border-[1px] md:px-8 default:px-2 md:py-3 default:py-2 rounded-full text-majorelle-blue font-medium md:text-lg default:text-xs hover:my-[1px]"
+                >
+                  <ButtonStarsIcon className="mt-5 z-40" />
+                  <p className="z-40 text-majorelle-blue group-hover:text-white transition-all duration-300">
+                    Learn More
+                  </p>
+                </Link>
               </div>
             </div>
           );

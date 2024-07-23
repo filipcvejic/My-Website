@@ -25,14 +25,14 @@ function AboutSection() {
 
   return (
     <div
-      className={`${bgImage} transition-all duration-500 w-full flex flex-col items-center h-screen gap-8`}
+      className={`section ${bgImage} transition-all duration-500 w-full flex flex-col items-center min-h-screen gap-8`}
       onWheel={scrollSectionHandler}
       id="about"
     >
       <Heading title={"About"} />
       <div className="flex flex-col gap-5 h-full">
         <div className="flex lg:flex-row default:flex-col-reverse w-screen justify-around items-center lg:px-5">
-          <p className="lg:max-w-2xl md:text-2xl lg:text-start lg:px-0 default:w-full default:text-center default:text-xl default:px-6">
+          <p className="xl:max-w-3xl lg:max-w-lg md:text-2xl lg:text-start lg:px-0 default:w-full default:text-center default:text-xl default:px-6">
             I am a{" "}
             <span className="text-majorelle-blue uppercase font-bold">
               full stack developer
@@ -45,7 +45,10 @@ function AboutSection() {
             challenges and collaborate with others.
           </p>
           <div className="relative px-7">
-            <img src={Illustration} className="" />
+            <img
+              src={Illustration}
+              className="default:max-w-[285px] sm:max-w-full"
+            />
             <div className="default:hidden lg:flex items-center justify-center">
               <img
                 src={js}
