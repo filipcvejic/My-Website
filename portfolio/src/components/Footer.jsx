@@ -17,7 +17,7 @@ function Footer() {
         <GitHubIcon />
         <TwitterIcon />
       </div>
-      <p className="text-3xl text-white hover:text-columbia-blue hover:transition-all hover:duration-500 default:hidden md:block">
+      <p className="text-3xl text-white hover:text-medium-purple hover:scale-110 transition-all duration-500 default:hidden md:block">
         <a href="mailto:filipinfo@gmail.com">filipinfo@gmail.com</a>
       </p>
     </div>

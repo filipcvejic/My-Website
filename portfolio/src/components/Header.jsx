@@ -56,13 +56,13 @@ function Header() {
   }, [location.hash]);
 
   return (
-    <div className="bg-header fixed w-full flex default:px-4 md:px-20 py-2 items-center z-50 shadow-3xl backdrop-blur-md">
-      <ul className="list-none flex sm:gap-20 default:justify-around default:text-xl sm:text-2xl font-semibold w-full lg:justify-end">
+    <div className="bg-header fixed w-full flex default:px-2 md:px-20 py-[10px] items-center z-50 shadow-3xl backdrop-blur-md">
+      <ul className="list-none flex sm:gap-20 default:justify-around font-semibold w-full lg:justify-end">
         {navigationLinks.map((link, index) => (
           <li key={index} className={`text-black`}>
             <a
               href={`#${link.route}`}
-              className="nav-link relative after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[3px] after:opacity-0 after:transition-all after:duration-300 after:bg-majorelle-blue after:rounded-full 
+              className="nav-link default:text-lg sm:text-2xl relative after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[3px] after:opacity-0 after:transition-all after:duration-300 after:bg-majorelle-blue after:rounded-full 
             hover:text-majorelle-blue hover:after:w-full hover:after:opacity-100"
             >
               {link.label}

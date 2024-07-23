@@ -2,7 +2,7 @@ import React from "react";
 
 function ContactTitle({ color }) {
   return (
-    <div className="flex flex-col md:gap-8 font-poppins">
+    <div className="flex flex-col md:gap-8">
       <div
         className={`text-${color} font-bold flex flex-col gap-0 leading-none`}
       >
@@ -21,7 +21,7 @@ function ContactTitle({ color }) {
           If you preffer to contact me use this email.
         </p>
         <p
-          className={`text-${color} font-bold md-lg:text-3xl md:text-2xl default:text-lg`}
+          className={`text-${color} font-bold md-lg:text-3xl md:text-2xl default:text-lg hover:text-cornflower-blue transition-all duration-300`}
         >
           <a href="mailto:filipinfo@gmail.com">filipinfo@gmail.com</a>
         </p>

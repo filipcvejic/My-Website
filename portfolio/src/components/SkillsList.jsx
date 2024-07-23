@@ -36,8 +36,8 @@ function SkillsList() {
       <div className="skills-list-background-animation" />
       <div className="relative flex justify-center w-full">
         <div className="lg:w-full lg:block hidden md:hidden sm:hidden">
-          <div className="flex flex-col justify-center items-center w-full group px-36 gap-12">
-            <div className="flex flex-row w-full justify-between">
+          <div className="flex flex-col justify-center items-center w-full group xl:px-36 gap-12">
+            <div className="flex flex-row w-full justify-around">
               {skills.slice(0, 6).map((skill, index) => (
                 <img
                   key={index}
@@ -60,7 +60,7 @@ function SkillsList() {
 
         {/* Drugi kontejner za manje ekrane */}
         <div className="w-full lg:hidden xl:hidden 2xl:hidden">
-          <div className="flex flex-col justify-center items-center w-full group md:px-32 sm:px-20 px-5 gap-12">
+          <div className="flex flex-col justify-center items-center w-full group md:px-32 sm:px-20 px-5 gap-12 default:gap-5">
             <div className="flex flex-row w-full justify-between">
               {skills.slice(0, 4).map((skill, index) => (
                 <img
