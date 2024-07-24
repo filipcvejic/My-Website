@@ -1,8 +1,6 @@
-export function startAnimation() {
-  const container = document.querySelector(".contact-form-wrapper");
-  const background = document.querySelector(
-    ".contact-form-background-animation"
-  );
+export function startAnimation(section) {
+  const container = document.querySelector(`.${section}-wrapper`);
+  const background = document.querySelector(`.${section}-background-animation`);
   if (!container || !background) return;
 
   const circles = [];

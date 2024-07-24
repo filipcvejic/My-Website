@@ -1,4 +1,8 @@
+let circlesInitialized = false;
+
 export function skillsAnimation() {
+  if (circlesInitialized) return;
+
   const container = document.querySelector(".skills-list-wrapper");
   const background = document.querySelector(
     ".skills-list-background-animation"
@@ -7,8 +11,8 @@ export function skillsAnimation() {
 
   const circles = [];
   const numCircles = 10;
-  const rows = Math.ceil(Math.sqrt(numCircles)); // Number of rows to create a grid
-  const cols = Math.ceil(numCircles / rows); // Number of columns to create a grid
+  const rows = Math.ceil(Math.sqrt(numCircles));
+  const cols = Math.ceil(numCircles / rows);
 
   const cellWidth = container.clientWidth / cols;
   const cellHeight = container.clientHeight / rows;
@@ -50,7 +54,7 @@ export function skillsAnimation() {
   }
 
   function animateCircle(circle) {
-    const moveX = Math.random() * 100 - 50; // Random move between -50 and 50 pixels
+    const moveX = Math.random() * 100 - 50;
     const moveY = Math.random() * 100 - 50;
 
     circle.element.style.transition = "transform 2s ease";
@@ -58,17 +62,19 @@ export function skillsAnimation() {
 
     setTimeout(() => {
       circle.element.style.transform = "translate(0, 0)";
-    }, 2000); // Return to original position after 2 seconds
+    }, 2000);
 
     setTimeout(() => {
       animateCircle(circle);
-    }, 4000); // Repeat after 4 seconds (2 seconds move + 2 seconds pause)
+    }, 4000);
   }
 
   circles.forEach((circle) => {
-    const initialDelay = Math.random() * 2000; // Initial delay between 0 and 2 seconds
+    const initialDelay = Math.random() * 2000;
     setTimeout(() => {
       animateCircle(circle);
     }, initialDelay);
   });
+
+  circlesInitialized = true;
 }
