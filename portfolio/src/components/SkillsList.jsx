@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import html from "/assets/icons/html.svg";
-import mongo from "/assets/icons/mongo.svg";
-import git from "/assets/icons/git.svg";
-import tailwind from "/assets/icons/tailwind.svg";
-import js from "/assets/icons/js.svg";
-import express from "/assets/icons/express.svg";
-import ts from "/assets/icons/ts.svg";
-import next from "/assets/icons/next.svg";
-import css from "/assets/icons/css.svg";
-import node from "/assets/icons/node.svg";
-import react from "/assets/icons/react.svg";
+import html from "../assets/icons/html.svg";
+import mongo from "../assets/icons/mongo.svg";
+import git from "../assets/icons/git.svg";
+import tailwind from "../assets/icons/tailwind.svg";
+import js from "../assets/icons/js.svg";
+import express from "../assets/icons/express.svg";
+import ts from "../assets/icons/ts.svg";
+import next from "../assets/icons/next.svg";
+import css from "../assets/icons/css.svg";
+import node from "../assets/icons/node.svg";
+import react from "../assets/icons/react.svg";
 import { skillsAnimation } from "../../skills-animation";
 
 function SkillsList() {

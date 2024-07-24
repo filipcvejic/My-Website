@@ -23,7 +23,7 @@ function ContactTitle({ color }) {
         <p
           className={`text-${color} font-bold md-lg:text-3xl md:text-2xl default:text-lg hover:text-cornflower-blue transition-all duration-300`}
         >
-          <a href="mailto:filipinfo@gmail.com">filipinfo@gmail.com</a>
+          <a href="mailto:contact@filipcvejic.com">contact@filipcvejic.com</a>
         </p>
       </div>
     </div>

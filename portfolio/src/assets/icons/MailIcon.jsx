@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function MailIcon() {
   return (
     <Link
-      to="mailto:filipinfo@gmail.com"
+      to="mailto:contact@filipcvejic.com"
       className="group hover:scale-110 transition-all duration-300"
     >
       <svg

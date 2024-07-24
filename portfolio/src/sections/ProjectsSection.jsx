@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import ButtonStarsIcon from "../icons/ButtonStarsIcon";
-import Image from "/assets/Untitled.png";
+import ButtonStarsIcon from "../assets/icons/ButtonStarsIcon";
+import Image from "../assets/Untitled.png";
 import Heading from "../components/Heading";
 import { Link } from "react-router-dom";
 // import { scrollAnimation } from "../../scroll-animation";

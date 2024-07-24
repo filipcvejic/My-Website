@@ -13,22 +13,22 @@ html {
 
 .hero-bg {
   @apply bg-cover bg-no-repeat bg-center;
-  background-image: url("/assets/hero-background.png");
+  background-image: url("./assets/hero-background.png");
 }
 
 .about-bg1 {
   @apply bg-cover bg-center;
-  background-image: url("/assets/about-background1.png");
+  background-image: url("./assets/about-background1.png");
 }
 
 .about-bg2 {
   @apply bg-cover bg-center;
-  background-image: url("/assets/about-background2.png");
+  background-image: url("./assets/about-background2.png");
 }
 
 .contact-bg {
   @apply bg-cover bg-top;
-  background-image: url("/assets/about-background1.png");
+  background-image: url("./assets/about-background1.png");
 }
 
 .skills-bg {
@@ -37,25 +37,25 @@ html {
 
 .project-bg1 {
   @apply relative bg-cover bg-left;
-  background-image: url("/assets/project-background1.png");
+  background-image: url("./assets/project-background1.png");
 }
 
 .project-bg2 {
   @apply relative bg-cover bg-right;
-  background-image: url("/assets/project-background2.png");
+  background-image: url("./assets/project-background2.png");
 }
 
 .footer-bg {
   @apply bg-cover bg-center;
-  background-image: url("/assets/footer-background.png");
+  background-image: url("./assets/footer-background.png");
 }
 
 .left-spiral-bg {
-  background-image: url("/assets/spiral-left.png");
+  background-image: url("./assets/spiral-left.png");
 }
 
 .right-spiral-bg {
-  background-image: url("/assets/spiral-right.png");
+  background-image: url("./assets/spiral-right.png");
 }
 
 .contact-form {

@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-background": "url('/assets/hero-background.png')",
-        "about-background": "url('/assets/about-background.png')",
+        "hero-background": "url('./assets/hero-background.png')",
+        "about-background": "url('./assets/about-background.png')",
         "custom-gradient": "rgba(112, 60, 238, 0)",
         "gradient-text":
           "linear-gradient(to right, #6836F4 0%, #A75BCE 34%, #9747FF 57%, #32D1D7 88%)",
@@ -31,7 +31,7 @@ export default {
         "5xl": "3.052rem",
       },
       content: {
-        underline: "url('/assets/icons/underline.svg')",
+        underline: "url('./assets/icons/underline.svg')",
       },
       fontFamily: {
         poppins: ["Poppins"],

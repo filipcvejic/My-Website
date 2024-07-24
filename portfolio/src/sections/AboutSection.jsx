@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from "react";
-import Illustration from "/assets/illustration.png";
+import Illustration from "../assets/illustration.png";
 import SkillsList from "../components/SkillsList";
 import { debounce } from "lodash";
 import Heading from "../components/Heading";
-import js from "/assets/illustrations/js-illustration.svg";
-import cpp from "/assets/illustrations/cpp-illustration.svg";
-import php from "/assets/illustrations/php-illustration.svg";
-import html from "/assets/illustrations/html-illustration.svg";
-import css from "/assets/illustrations/css-illustration.svg";
+import js from "../assets/illustrations/js-illustration.svg";
+import cpp from "../assets/illustrations/cpp-illustration.svg";
+import php from "../assets/illustrations/php-illustration.svg";
+import html from "../assets/illustrations/html-illustration.svg";
+import css from "../assets/illustrations/css-illustration.svg";
 
 function AboutSection() {
   const [bgImage, setBgImage] = useState("about-bg1");
