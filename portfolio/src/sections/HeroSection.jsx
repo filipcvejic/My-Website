@@ -3,21 +3,23 @@ import { initCanvasDots } from "../../connecting-dots-animation";
 import leftSpiral from "../assets/spiral-left.png";
 import rightSpiral from "../assets/spiral-right.png";
 import ButtonStarsIcon from "../assets/icons/ButtonStarsIcon";
+import ConnectingDotsCanvas from "../components/ConnectingDotsCanvas";
 
 function HeroSection() {
-  useEffect(() => {
-    initCanvasDots();
-  }, []);
+  // useEffect(() => {
+  //   initCanvasDots();
+  // }, []);
 
   return (
     <div
       className="section h-screen relative flex justify-center items-center"
       id="home"
     >
-      <canvas
+      {/* <canvas
         className="connecting-dots absolute inset-0 w-full h-full z-40"
         id="canvas"
-      ></canvas>
+      ></canvas> */}
+      <ConnectingDotsCanvas />
       <div className="flex flex-col items-center gap-7">
         <div className="md:text-8xl sm:text-6xl default:text-5xl tracking-tight flex flex-col items-center leading-none font-semibold text-center z-10 default:mx-10 lg:mx-0">
           <span className="text-majorelle-blue tracking-tight">
