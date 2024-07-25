@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
   scroll-behavior: smooth;
 }
 
@@ -12,7 +16,7 @@ html {
 }
 
 .hero-bg {
-  @apply bg-cover bg-no-repeat bg-center;
+  @apply bg-cover bg-center;
   background-image: url("./assets/hero-background.png");
 }
 

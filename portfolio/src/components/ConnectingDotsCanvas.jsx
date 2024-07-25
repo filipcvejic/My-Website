@@ -57,7 +57,6 @@ const CanvasDots = () => {
 
       line: function () {
         if (window.innerWidth >= 1024) {
-          // Only draw lines if resolution is 1024px or higher
           for (let i = 0; i < dots.nb; i++) {
             for (let j = 0; j < dots.nb; j++) {
               const i_dot = dots.array[i];
@@ -117,8 +116,7 @@ const CanvasDots = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="connecting-dots absolute inset-0 w-full h-full z-40"
-      id="canvas"
+      className="absolute top-0 left-0 w-full h-full z-40 overflow-hidden pointer-events-none"
     />
   );
 };
