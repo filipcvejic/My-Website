@@ -1,8 +1,9 @@
 export function initCanvasDots() {
-  var canvas = document.querySelector("canvas"),
-    ctx = canvas.getContext("2d"),
-    colorDot = "#CECECE",
-    color = "#CECECE";
+  const canvas = document.querySelector("canvas");
+  const ctx = canvas.getContext("2d");
+  const colorDot = "#CECECE";
+  const color = "#CECECE";
+
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   canvas.style.display = "block";
@@ -10,23 +11,30 @@ export function initCanvasDots() {
   ctx.lineWidth = 0.1;
   ctx.strokeStyle = color;
 
-  var mousePosition = {
+  const isMobile = window.innerWidth <= 768;
+  const numDots = isMobile ? 200 : 600;
+  const distance = isMobile ? 30 : 60;
+  const dRadius = isMobile ? 50 : 100;
+
+  const mousePosition = {
     x: (30 * canvas.width) / 100,
     y: (30 * canvas.height) / 100,
   };
 
-  var dots = {
-    nb: 600,
-    distance: 60,
-    d_radius: 100,
+  const dots = {
+    nb: numDots,
+    distance: distance,
+    d_radius: dRadius,
     array: [],
   };
 
   function Dot() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
+
     this.vx = -0.5 + Math.random();
     this.vy = -0.5 + Math.random();
+
     this.radius = Math.random();
   }
 
@@ -39,11 +47,14 @@ export function initCanvasDots() {
 
     animate: function () {
       for (let i = 0; i < dots.nb; i++) {
-        var dot = dots.array[i];
+        const dot = dots.array[i];
+
         if (dot.y < 0 || dot.y > canvas.height) {
+          dot.vx = dot.vx;
           dot.vy = -dot.vy;
         } else if (dot.x < 0 || dot.x > canvas.width) {
           dot.vx = -dot.vx;
+          dot.vy = dot.vy;
         }
         dot.x += dot.vx;
         dot.y += dot.vy;
@@ -51,21 +62,20 @@ export function initCanvasDots() {
     },
 
     line: function () {
+      if (isMobile) return;
+
       for (let i = 0; i < dots.nb; i++) {
         for (let j = 0; j < dots.nb; j++) {
-          var i_dot = dots.array[i];
-          var j_dot = dots.array[j];
+          const i_dot = dots.array[i];
+          const j_dot = dots.array[j];
+
           if (
-            i_dot.x - j_dot.x < dots.distance &&
-            i_dot.y - j_dot.y < dots.distance &&
-            i_dot.x - j_dot.x > -dots.distance &&
-            i_dot.y - j_dot.y > -dots.distance
+            Math.abs(i_dot.x - j_dot.x) < dots.distance &&
+            Math.abs(i_dot.y - j_dot.y) < dots.distance
           ) {
             if (
-              i_dot.x - mousePosition.x < dots.d_radius &&
-              i_dot.y - mousePosition.y < dots.d_radius &&
-              i_dot.x - mousePosition.x > -dots.d_radius &&
-              i_dot.y - mousePosition.y > -dots.d_radius
+              Math.abs(i_dot.x - mousePosition.x) < dots.d_radius &&
+              Math.abs(i_dot.y - mousePosition.y) < dots.d_radius
             ) {
               ctx.beginPath();
               ctx.moveTo(i_dot.x, i_dot.y);
@@ -83,20 +93,27 @@ export function initCanvasDots() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < dots.nb; i++) {
       dots.array.push(new Dot());
-      var dot = dots.array[i];
+      const dot = dots.array[i];
       dot.create();
     }
-    dot.line();
-    dot.animate();
+
+    dots.array[0].line();
+    dots.array[0].animate();
   }
 
-  window.onmousemove = function (event) {
-    mousePosition.x = event.pageX;
-    mousePosition.y = event.pageY;
-  };
+  if (!isMobile) {
+    window.onmousemove = function (parameter) {
+      mousePosition.x = parameter.pageX;
+      mousePosition.y = parameter.pageY;
+    };
+  }
 
   mousePosition.x = window.innerWidth / 2;
   mousePosition.y = window.innerHeight / 2;
 
   setInterval(createDots, 1000 / 30);
 }
+
+window.onload = function () {
+  initCanvasDots();
+};

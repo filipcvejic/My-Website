@@ -3,7 +3,6 @@ import { initCanvasDots } from "../../connecting-dots-animation";
 import leftSpiral from "../assets/spiral-left.png";
 import rightSpiral from "../assets/spiral-right.png";
 import ButtonStarsIcon from "../assets/icons/ButtonStarsIcon";
-import { Link } from "react-router-dom";
 
 function HeroSection() {
   useEffect(() => {
