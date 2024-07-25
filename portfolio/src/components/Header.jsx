@@ -16,7 +16,7 @@ function Header() {
     const sectionEls = document.querySelectorAll(".section");
 
     const updateActiveLink = () => {
-      let currentSection = "home";
+      let currentSection = "";
 
       sectionEls.forEach((sectionEl) => {
         if (window.scrollY >= sectionEl.offsetTop - 200) {

@@ -22,7 +22,7 @@ function ContactSection() {
           <div className="md:block default:hidden">
             <ContactTitle color={"majorelle-blue"} />
           </div>
-          <div className="contact-form-wrapper relative overflow-hidden bg-transparent xl:max-w-[500px] md:max-w-[400px] w-full rounded-xl">
+          <div className="contact-form-wrapper relative  bg-transparent xl:max-w-[500px] md:max-w-[400px] w-full rounded-xl">
             <div className="contact-form-background-animation" />
             <form className="contact-form relative border-[6px] border-majorelle-blue border-transparent  bg-electric-violet-20 rounded-xl p-8 flex flex-col gap-4">
               {contactLabels.map((label, index) => {

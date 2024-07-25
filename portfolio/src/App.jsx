@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="relative overflow-x-hidden font-poppins">
       <Header />
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-hidden">
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
