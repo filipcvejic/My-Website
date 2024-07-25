@@ -16,13 +16,19 @@ function Header() {
     const sectionEls = document.querySelectorAll(".section");
 
     const updateActiveLink = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
       let currentSection = "";
 
       sectionEls.forEach((sectionEl) => {
-        if (window.scrollY >= sectionEl.offsetTop - 200) {
+        const sectionTop = sectionEl.offsetTop;
+        const sectionBottom = sectionTop + sectionEl.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           currentSection = sectionEl.id;
         }
       });
+
+      console.log("Current Section:", currentSection);
 
       const activeClassNames =
         "text-majorelle-blue after:w-full after:opacity-100";
@@ -30,7 +36,7 @@ function Header() {
       navLinkEls.forEach((navLinkEl) => {
         navLinkEl.classList.remove(...activeClassNames.split(" "));
 
-        if (navLinkEl.href.includes(currentSection)) {
+        if (navLinkEl.getAttribute("href") === `#${currentSection}`) {
           navLinkEl.classList.add(...activeClassNames.split(" "));
         }
       });
@@ -59,11 +65,10 @@ function Header() {
     <div className="bg-header fixed w-full flex default:px-2 md:px-20 py-[10px] items-center z-50 shadow-3xl backdrop-blur-md">
       <ul className="list-none flex sm:gap-20 default:justify-around font-semibold w-full lg:justify-end">
         {navigationLinks.map((link, index) => (
-          <li key={index} className={`text-black`}>
+          <li key={index} className="text-black">
             <a
               href={`#${link.route}`}
-              className="nav-link default:text-lg sm:text-2xl relative after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[3px] after:opacity-0 after:transition-all after:duration-300 after:bg-majorelle-blue after:rounded-full 
-            hover:text-majorelle-blue hover:after:w-full hover:after:opacity-100"
+              className="nav-link default:text-lg sm:text-2xl relative after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:w-0 after:h-[3px] after:opacity-0 after:transition-all after:duration-300 after:bg-majorelle-blue after:rounded-full hover:text-majorelle-blue hover:after:w-full hover:after:opacity-100"
             >
               {link.label}
             </a>

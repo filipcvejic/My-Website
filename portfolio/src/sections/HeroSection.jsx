@@ -1,27 +1,14 @@
-import React, { useEffect } from "react";
-import { initCanvasDots } from "../../connecting-dots-animation";
-import leftSpiral from "../assets/spiral-left.png";
-import rightSpiral from "../assets/spiral-right.png";
+import React from "react";
+
 import ButtonStarsIcon from "../assets/icons/ButtonStarsIcon";
-import ConnectingDotsCanvas from "../components/ConnectingDotsCanvas";
+import CanvasDots from "../components/ConnectingDotsCanvas";
 
 function HeroSection() {
-  // useEffect(() => {
-  //   initCanvasDots();
-  // }, []);
-
   return (
-    <div
-      className="section h-screen relative flex justify-center items-center"
-      id="home"
-    >
-      {/* <canvas
-        className="connecting-dots absolute inset-0 w-full h-full z-40"
-        id="canvas"
-      ></canvas> */}
-      <ConnectingDotsCanvas />
-      <div className="flex flex-col items-center gap-7">
-        <div className="md:text-8xl sm:text-6xl default:text-5xl tracking-tight flex flex-col items-center leading-none font-semibold text-center z-10 default:mx-10 lg:mx-0">
+    <div className="h-screen hero-bg relative flex justify-center items-center overflow-hidden">
+      <CanvasDots />
+      <div className="flex flex-col items-center gap-7 z-10">
+        <div className="md:text-8xl sm:text-6xl default:text-5xl tracking-tight flex flex-col items-center leading-none font-semibold text-center default:mx-10 lg:mx-0">
           <span className="text-majorelle-blue tracking-tight">
             Hello, I'm Filip.
           </span>
@@ -38,17 +25,6 @@ function HeroSection() {
           </p>
         </a>
       </div>
-      <div className="default:hidden md:flex justify-center items-center">
-        <img
-          src={leftSpiral}
-          className="absolute xl:w-[600px] lg:w-[480px] md:w-[360px] sm:w-[300px] default:w-[240px] left-0"
-        />
-        <img
-          src={rightSpiral}
-          className="absolute xl:w-[600px] lg:w-[480px] md:w-[360px] sm:w-[300px] default:w-[240px] right-0"
-        />
-      </div>
-      {/* max-w-[30vw] */}
     </div>
   );
 }
