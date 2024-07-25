@@ -1,5 +1,3 @@
-// connecting-dots-animation.js
-
 export function initCanvasDots() {
   const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
@@ -13,30 +11,23 @@ export function initCanvasDots() {
   ctx.lineWidth = 0.1;
   ctx.strokeStyle = color;
 
-  const isMobile = window.innerWidth <= 768;
-  const numDots = isMobile ? 200 : 600;
-  const distance = isMobile ? 30 : 60;
-  const dRadius = isMobile ? 50 : 100;
-
   const mousePosition = {
-    x: (30 * canvas.width) / 100,
-    y: (30 * canvas.height) / 100,
+    x: canvas.width / 2,
+    y: canvas.height / 2,
   };
 
   const dots = {
-    nb: numDots,
-    distance: distance,
-    d_radius: dRadius,
+    nb: 600,
+    distance: 60,
+    d_radius: 100,
     array: [],
   };
 
   function Dot() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-
     this.vx = -0.5 + Math.random();
     this.vy = -0.5 + Math.random();
-
     this.radius = Math.random();
   }
 
@@ -64,7 +55,10 @@ export function initCanvasDots() {
     },
 
     line: function () {
-      if (isMobile) return;
+      if (window.innerWidth < 768) {
+        // Proveri da li je ekran manji od 768px (mobilni uređaji)
+        return; // Preskoči crtanje linija
+      }
 
       for (let i = 0; i < dots.nb; i++) {
         for (let j = 0; j < dots.nb; j++) {
@@ -93,32 +87,27 @@ export function initCanvasDots() {
 
   function createDots() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    dots.array = [];
     for (let i = 0; i < dots.nb; i++) {
       dots.array.push(new Dot());
       const dot = dots.array[i];
       dot.create();
     }
 
-    if (!isMobile) {
-      dots.array[0].line();
+    if (window.innerWidth >= 768) {
+      // Ako je ekran veći od 768px
+      dots.array.forEach((dot) => {
+        dot.line();
+      });
     }
-    dots.array[0].animate();
+    dots.array.forEach((dot) => {
+      dot.animate();
+    });
   }
 
-  if (!isMobile) {
-    window.onmousemove = function (event) {
-      mousePosition.x = event.pageX;
-      mousePosition.y = event.pageY;
-    };
-  }
-
-  mousePosition.x = window.innerWidth / 2;
-  mousePosition.y = window.innerHeight / 2;
+  window.onmousemove = function (event) {
+    mousePosition.x = event.pageX;
+    mousePosition.y = event.pageY;
+  };
 
   setInterval(createDots, 1000 / 30);
 }
-
-window.onload = function () {
-  initCanvasDots();
-};
