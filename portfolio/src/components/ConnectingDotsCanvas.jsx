@@ -1,81 +1,126 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
-const ConnectingDotsCanvas = () => {
+const CanvasDots = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const dots = [];
-    const numDots = 10;
-    const minWidth = 1024; // Minimalna širina prozora za crtanje linija
+    const colorDot = "gray";
+    const color = "gray";
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.display = "block";
+    ctx.fillStyle = colorDot;
+    ctx.lineWidth = 0.2;
+    ctx.strokeStyle = color;
 
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const mousePosition = {
+      x: (30 * canvas.width) / 100,
+      y: (30 * canvas.height) / 100,
     };
 
-    const drawDots = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const dots = {
+      nb: 600,
+      distance: 60,
+      d_radius: 100,
+      array: [],
+    };
 
-      if (window.innerWidth >= minWidth) {
-        ctx.strokeStyle = "#00f"; // Boja linija
-        ctx.lineWidth = 2;
+    function Dot() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = -0.5 + Math.random();
+      this.vy = -0.5 + Math.random();
+      this.radius = Math.random() + 0.5;
+    }
 
-        // Crtaj linije između tačaka
-        for (let i = 0; i < dots.length; i++) {
-          for (let j = i + 1; j < dots.length; j++) {
-            const dist = Math.sqrt(
-              (dots[j].x - dots[i].x) ** 2 + (dots[j].y - dots[i].y) ** 2
-            );
-            if (dist < 150) {
-              // Raspon linija
-              ctx.beginPath();
-              ctx.moveTo(dots[i].x, dots[i].y);
-              ctx.lineTo(dots[j].x, dots[j].y);
-              ctx.stroke();
+    Dot.prototype = {
+      create: function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fill();
+      },
+
+      animate: function () {
+        for (let i = 0; i < dots.nb; i++) {
+          const dot = dots.array[i];
+          if (dot.y < 0 || dot.y > canvas.height) {
+            dot.vy = -dot.vy;
+          } else if (dot.x < 0 || dot.x > canvas.width) {
+            dot.vx = -dot.vx;
+          }
+          dot.x += dot.vx;
+          dot.y += dot.vy;
+        }
+      },
+
+      line: function () {
+        if (window.innerWidth >= 1024) {
+          // Only draw lines if resolution is 1024px or higher
+          for (let i = 0; i < dots.nb; i++) {
+            for (let j = 0; j < dots.nb; j++) {
+              const i_dot = dots.array[i];
+              const j_dot = dots.array[j];
+              if (
+                i_dot.x - j_dot.x < dots.distance &&
+                i_dot.y - j_dot.y < dots.distance &&
+                i_dot.x - j_dot.x > -dots.distance &&
+                i_dot.y - j_dot.y > -dots.distance
+              ) {
+                if (
+                  i_dot.x - mousePosition.x < dots.d_radius &&
+                  i_dot.y - mousePosition.y < dots.d_radius &&
+                  i_dot.x - mousePosition.x > -dots.d_radius &&
+                  i_dot.y - mousePosition.y > -dots.d_radius
+                ) {
+                  ctx.beginPath();
+                  ctx.moveTo(i_dot.x, i_dot.y);
+                  ctx.lineTo(j_dot.x, j_dot.y);
+                  ctx.stroke();
+                  ctx.closePath();
+                }
+              }
             }
           }
         }
-      }
-
-      // Crtaj tačke
-      ctx.fillStyle = "#00f"; // Boja tačaka
-      for (const dot of dots) {
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, 3, 0, 2 * Math.PI);
-        ctx.fill();
-      }
+      },
     };
 
-    const updateDots = () => {
-      dots.length = 0;
-      for (let i = 0; i < numDots; i++) {
-        dots.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-        });
+    function createDots() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < dots.nb; i++) {
+        dots.array.push(new Dot());
+        const dot = dots.array[i];
+        dot.create();
       }
-      drawDots();
+      Dot.prototype.line();
+      Dot.prototype.animate();
+    }
+
+    window.onmousemove = function (event) {
+      mousePosition.x = event.pageX;
+      mousePosition.y = event.pageY;
     };
 
-    const animate = () => {
-      updateDots();
-      requestAnimationFrame(animate);
-    };
+    mousePosition.x = window.innerWidth / 2;
+    mousePosition.y = window.innerHeight / 2;
 
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-    animate();
+    const interval = setInterval(createDots, 1000 / 30);
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
+      clearInterval(interval);
+      window.onmousemove = null;
     };
   }, []);
 
   return (
-    <canvas ref={canvasRef} style={{ position: "absolute", top: 0, left: 0 }} />
+    <canvas
+      ref={canvasRef}
+      className="connecting-dots absolute inset-0 w-full h-full z-40"
+      id="canvas"
+    />
   );
 };
 
-export default ConnectingDotsCanvas;
+export default CanvasDots;
