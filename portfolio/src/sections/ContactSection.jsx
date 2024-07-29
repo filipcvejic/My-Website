@@ -13,18 +13,18 @@ function ContactSection() {
 
   return (
     <div
-      className="section h-screen flex flex-col contact-bg default:gap-3"
+      className="section  flex flex-col contact-bg default:gap-14"
       id="contact"
     >
-      <div className="flex flex-col items-center justify-between h-full default:gap-4">
+      <div className="flex flex-col items-center justify-between h-full default:gap-16">
         <Heading title={`Contact`} />
         <div className="flex justify-around w-full items-center h-full default:px-5">
           <div className="md:block default:hidden">
             <ContactTitle color={"majorelle-blue"} />
           </div>
-          <div className="contact-form-wrapper relative  bg-transparent xl:max-w-[500px] md:max-w-[400px] w-full rounded-xl">
+          <div className="contact-form-wrapper relative overflow-hidden bg-transparent xl:max-w-[500px] md:max-w-[400px] w-full rounded-xl">
             <div className="contact-form-background-animation" />
-            <form className="contact-form relative border-[6px] border-majorelle-blue border-transparent  bg-electric-violet-20 rounded-xl p-8 flex flex-col gap-4">
+            <form className="contact-form relative border-[6px] overflow-hidden border-majorelle-blue border-transparent bg-electric-violet-20 rounded-xl p-8 flex flex-col gap-4">
               {contactLabels.map((label, index) => {
                 const isLastElement = index === contactLabels.length - 1;
 
