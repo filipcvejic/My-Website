@@ -40,11 +40,12 @@ function Header() {
       if (location.hash) {
         const targetSection = document.querySelector(location.hash);
         if (targetSection) {
-          targetSection.scrollIntoView({ behavior: "smooth" });
+          setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }, 100);
         }
       }
     };
-
     scrollToSection();
     updateActiveLink();
 
