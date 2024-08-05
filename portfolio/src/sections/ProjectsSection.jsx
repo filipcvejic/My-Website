@@ -7,18 +7,11 @@ function ProjectsSection() {
   const projects = [
     {
       title: "Technomedia",
-      link: "https://technomediashop.netlify.app",
+      link: "https://technomedia-five.vercel.app",
       description:
-        "Full stack social media application built with React, Node.js, Express.js, MongoDB, Socket.io and AWS S3.",
+        "Full stack e-commerce application built with React, Node.js, Express.js, MongoDB and Tailwind.",
       image: Image,
       repository: "https://github.com/filipcvejic/Technomedia",
-    },
-    {
-      title: "Technomedia",
-      link: "https://technomediashop.netlify.app",
-      description:
-        "Full stack social media application built with React, Node.js, Express.js, MongoDB, Socket.io and AWS S3.",
-      image: Image,
     },
   ];
 
