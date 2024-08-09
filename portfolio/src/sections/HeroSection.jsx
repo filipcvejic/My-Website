@@ -23,12 +23,12 @@ function HeroSection() {
           className="project-button group relative overflow-hidden border-majorelle-blue hover:border-none flex items-center md:gap-2 default:gap-[6px] border-[1px] md:px-8 default:px-4 default:py-3 rounded-full text-majorelle-blue font-medium md:text-lg default:text-lg hover:my-[1px]"
         >
           <ButtonStarsIcon className="mt-5 z-40" />
-          <p className="z-40 text-majorelle-blue group-hover:text-white transition-all duration-300">
+          <p className="z-40 text-majorelle-blue group-hover:text-white transition-all duration-300 select-none">
             View My Work
           </p>
         </a>
       </div>
-      <div className="default:hidden md:flex justify-center items-center">
+      <div className="default:hidden md:flex justify-center items-center select-none pointer-events-none">
         <img
           src={leftSpiral}
           className="absolute xl:w-[600px] lg:w-[480px] md:w-[360px] sm:w-[300px] default:w-[240px] left-0"
