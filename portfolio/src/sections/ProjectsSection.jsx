@@ -1,5 +1,6 @@
 import ButtonStarsIcon from "../assets/icons/ButtonStarsIcon";
-import Image from "../assets/Untitled.png";
+import TechnomediaImage from "../assets/Technomedia.png";
+import TermodomImage from "../assets/Termodom.png";
 import Heading from "../components/Heading";
 import { Link } from "react-router-dom";
 
@@ -10,8 +11,17 @@ function ProjectsSection() {
       link: "https://technomedia-five.vercel.app",
       description:
         "Full stack e-commerce application built with React, Node.js, Express.js, MongoDB and Tailwind.",
-      image: Image,
+      image: TechnomediaImage,
       repository: "https://github.com/filipcvejic/Technomedia",
+    },
+    {
+      title: "Termodom",
+      link: "https://termodom.rs",
+      description:
+        "E-Commerce Application for Construction Materials made in React, Next.js, TypeScript, Node.js, PostgreSQL and MUI.",
+      image: TermodomImage,
+      repository:
+        "https://github.com/LimitlessSoft/termodom--ecosystem/tree/master/src/TD.Web/TD.Web.Public/TD.Web.Public.Fe",
     },
   ];
 
