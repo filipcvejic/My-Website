@@ -1,6 +1,7 @@
 import ButtonStarsIcon from "../assets/icons/ButtonStarsIcon";
 import TechnomediaImage from "../assets/Technomedia.png";
 import TermodomImage from "../assets/Termodom.png";
+import PlumberImage from "../assets/Plumber.png";
 import Heading from "../components/Heading";
 import { Link } from "react-router-dom";
 
@@ -22,6 +23,14 @@ function ProjectsSection() {
       image: TermodomImage,
       repository:
         "https://github.com/LimitlessSoft/termodom--ecosystem/tree/master/src/TD.Web/TD.Web.Public/TD.Web.Public.Fe",
+    },
+    {
+      title: "Plumber",
+      link: "https://vodoinstalater-mica.rs",
+      description:
+        "Plumbing Website built with Next.js, React and TypeScript, offering plumbing services with a user-friendly interface.",
+      image: PlumberImage,
+      repository: "https://github.com/filipcvejic/Odgusivac",
     },
   ];
 
