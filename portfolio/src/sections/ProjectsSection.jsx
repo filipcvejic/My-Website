@@ -2,6 +2,7 @@ import ButtonStarsIcon from "../assets/icons/ButtonStarsIcon";
 import TechnomediaImage from "../assets/Technomedia.png";
 import TermodomImage from "../assets/Termodom.png";
 import PlumberImage from "../assets/Plumber.png";
+import KlimatikImage from "../assets/Klimatik.png";
 import Heading from "../components/Heading";
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,14 @@ function ProjectsSection() {
         "Plumbing Website built with Next.js, React and TypeScript, offering plumbing services with a user-friendly interface.",
       image: PlumberImage,
       repository: "https://github.com/filipcvejic/Odgusivac",
+    },
+    {
+      title: "Klimatik",
+      link: "https://klimatik.rs",
+      description:
+        "Air Conditioning Services Website built with Next.js, React, and TypeScript, offering local air conditioning services with a user-friendly interface.",
+      image: KlimatikImage,
+      repository: "https://github.com/filipcvejic/Klimatik",
     },
   ];
 
