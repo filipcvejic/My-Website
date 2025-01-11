@@ -37,8 +37,7 @@ function AboutSection() {
             <span className="text-majorelle-blue uppercase font-bold">
               full stack developer
             </span>{" "}
-            with extensive knowledge of the MERN Stack. With over a year and a
-            half of professional experience, I have honed my skills in building
+            with extensive knowledge of the MERN Stack. With over a three years of professional experience, I have honed my skills in building
             and debugging complex web applications. My projects, showcased
             below, speak volumes about my capabilities and dedication to
             delivering high-quality solutions. I am always eager to take on new
