@@ -24,23 +24,7 @@ function ProjectsSection() {
       image: TermodomImage,
       repository:
         "https://github.com/LimitlessSoft/termodom--ecosystem/tree/master/src/TD.Web/TD.Web.Public/TD.Web.Public.Fe",
-    },
-    {
-      title: "Plumber",
-      link: "https://vodoinstalater-mica.rs",
-      description:
-        "Plumbing Website built with Next.js, React and TypeScript, offering plumbing services with a user-friendly interface.",
-      image: PlumberImage,
-      repository: "https://github.com/filipcvejic/Odgusivac",
-    },
-    {
-      title: "Klimatik",
-      link: "https://klimatik.rs",
-      description:
-        "Air Conditioning Services Website built with Next.js, React, and TypeScript, offering local air conditioning services with a user-friendly interface.",
-      image: KlimatikImage,
-      repository: "https://github.com/filipcvejic/Klimatik",
-    },
+    }
   ];
 
   return (
